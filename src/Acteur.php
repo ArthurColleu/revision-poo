@@ -1,9 +1,11 @@
 <?php
 
+namespace App;
+
+
 class Acteur {
     private string $nom;
     private string $prenom;
-    private array $acteurs = [];
     public function __construct(string $prenom, string $nom) {
         $this->nom = $nom;
         $this->prenom = $prenom;
@@ -13,9 +15,6 @@ class Acteur {
     }
     public function getPrenom() : string {
         return $this->prenom;
-    }
-    public  function ajouterActeur(Acteur $acteur) : void {
-        $this->acteurs[] = $acteur;
     }
 
     /**
