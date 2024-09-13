@@ -9,7 +9,10 @@ class Equipe {
         $this->nom = $nom;
         $this->nombresLikes = 0;
     }
-
+    public function setNom(string $nom): void
+    {
+        $this->nom = $nom;
+    }
     public function getNom(): string {
         return $this->nom;
     }

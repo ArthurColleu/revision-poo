@@ -3,27 +3,29 @@
 use App\Personne;
 use App\Entites\Equipe;
 
-
-class IncrementerLikes extends \PHPUnit\Framework\TestCase
+class IncrementerLikesTest extends \PHPUnit\Framework\TestCase
 {
     private Personne $personne;
+    private Equipe $nombresLikes;
     private Equipe $equipe;
 
-    protected function setUp() :void
+    protected function setUp(): void
     {
-        //Cette méthode est appelée lors de l'exécution de chaque tests
-        $this->validateur =new Personne();
-        $this->validateur =new Equipe();
-
+        // Initialisation des objets
+        $this->personne = new Personne();
+        $this->equipe = new Equipe();
     }
 
-    public function liker_likeAjouter_(){
+    public function test_AugmentLike_AugmentePositif()
+    {
         // Arrange
-        $equipeLiker="PSG";
-        // Act
-        $resultat = $this->personne->liker($equipeLiker);
-        // Assert
-        $this->assertEquals();
-    }
+        $this->equipe->setNom("PSG");
 
+        // Act
+        $this->personne->liker($this->equipe);
+
+        // Assert
+        $this->assertEquals($this->nombresLikes, $this->equipe->getNombresLikes(), "Le nombre de likes a bien augmenté.");
+    }
 }
+
