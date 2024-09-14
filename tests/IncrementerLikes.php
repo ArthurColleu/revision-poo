@@ -14,9 +14,12 @@ class IncrementerLikesTest extends \PHPUnit\Framework\TestCase
         // Initialisation des objets
         $this->personne = new Personne();
         $this->equipe = new Equipe();
+        $this->nombresLikes = new Equipe();
+
     }
 
-    public function test_AugmentLike_AugmentePositif()
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function test_augmenterLike_augmentePositif()
     {
         // Arrange
         $this->equipe->setNom("PSG");
